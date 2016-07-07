@@ -8,12 +8,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li [class.active]="isCurrentRoute(['Users'])"><a [routerLink]="['/users']">Users</a></li>
-        <li [class.active]="isCurrentRoute(['Posts'])"><a [routerLink]="['/posts']">Posts</a></li>
+        <li [class.active]="isCurrentRoute('/users')"><a [routerLink]="['/users']">Users</a></li>
+        <li [class.active]="isCurrentRoute('/posts')"><a [routerLink]="['/posts']">Posts</a></li>
       </ul>
-      <div class="navbar-form navbar-right">
-        <login-form></login-form>
-      </div>
+      <login-form *ngIf="!isLoggedIn" class="navbar-form navbar-right"></login-form>
+      <logout *ngIf="isLoggedIn"></logout>
     </div>
     <!-- /.navbar-collapse -->
   </div>

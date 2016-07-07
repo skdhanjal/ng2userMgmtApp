@@ -1,17 +1,24 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { LogoutComponent } from '../login/logout.component';
 
 @Component({
     selector: 'navbar',
     templateUrl: 'app/navbar/navbar.component.html',
-    directives: [ROUTER_DIRECTIVES, LoginComponent]
+    directives: [ROUTER_DIRECTIVES, LoginComponent, LogoutComponent],
+    styles: [`
+        .navbar-form {
+            margin-bottom: -2px;
+        }
+    `]
 })
 export class NavBarComponent {
-    constructor(private _router: Router){
+    private isLoggedIn:boolean = false;
+    constructor(private _router: Router) {
     }
     
-    isCurrentRoute(route){
-        return false;
+    isCurrentRoute(routeUrl){
+        return this._router.url == routeUrl;
     }
  }
