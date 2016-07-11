@@ -11,10 +11,13 @@ import { LogoutComponent } from '../login/logout.component';
         .navbar-form {
             margin-bottom: -2px;
         }
+        .navbar{
+            margin-bottom:0px;
+        }
     `]
 })
 export class NavBarComponent {
-    private isLoggedIn:boolean = false;
+    private isLoggedIn:boolean = true;
     constructor(private _router: Router) {
     }
     

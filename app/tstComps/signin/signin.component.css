@@ -1,0 +1,44 @@
+.signin-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient( circle at 50% 50%, #f5f5f5, #e1e1e1);
+}
+
+.signin-panel{
+    position: absolute;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    width: 580px;
+    height: 210px;
+    background: white;
+    margin: auto;
+    color: #474747;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+}
+
+.welcome{
+    text-transform: uppercase;
+    color: #6666dc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: inline-block;
+}
+
+.lebels {
+    padding: 4px 0;
+}
+
+.input-group-addon {
+    background-color: white;
+}
+
+.remember-me {
+    margin-top: 20px;
+}
