@@ -1,0 +1,45 @@
+<div class="signin-container">
+    <div class="panel panel-default signin-panel">
+        <div class="panel-body">
+            <div class="welcome">Welcome</div>
+            <form class="form-inline" (ngSubmit)="onSubmit(loginForm)" #loginForm = "ngForm">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                    <input type="text" 
+                           class="form-control" 
+                           placeholder="username" 
+                           id="username"
+                           ngControl = "username"
+                           #username = "ngForm"
+                           required>
+                </div>
+                <div class="input-group ">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+                    <input type="password" 
+                           class="form-control" 
+                           placeholder="Password" 
+                           id="password"
+                           ngControl = "password"
+                           #password = "ngForm"
+                           required>
+                </div>
+                <button type="submit" 
+                        class="btn btn-primary"
+                        [disabled]= "!loginForm.valid">Sign In</button>
+            </form>
+            <div class="remember-me">
+                <div class="checkbox checkbox-primary">
+                    <input type="checkbox" id="checkbox1">
+                    <label for="checkbox1">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <spinner [isVisible] = "isLoggingIn"></spinner>
+</div>
+

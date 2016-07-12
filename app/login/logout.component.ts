@@ -1,11 +1,13 @@
-import {Component} from '@angular/core';
+import {Component , OnInit, Input} from '@angular/core';
+import {AuthenticationService} from '../common/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'logout',
     template: `
         <div class="navbar-right">
-            <span class="navbar-text"> Welcome, {{ user.name}}</span>
-            <button type="button" class="btn btn-primary">Logout</button>
+            <span class="navbar-text"> Welcome, {{ getUserName()}}</span>
+            <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
         </div>
     `,
     styles: [`
@@ -16,7 +18,20 @@ import {Component} from '@angular/core';
     `]
 })
 export class LogoutComponent {
-    user = {
-        name: 'Shashi'
+
+    constructor(private _authService: AuthenticationService,
+                private _router: Router){ }
+
+    logout() {
+        this._authService.logout()
+            .subscribe(res => {
+                console.log(res);
+            })
+        this._router.navigate(['/login']);
     }
+
+    getUserName() {
+        return this._authService.getAuthenticatedUserName();
+    }
+
 }

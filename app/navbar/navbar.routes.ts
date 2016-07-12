@@ -4,8 +4,8 @@ import { PostsComponent }    from '../posts/posts.component';
 import {HomeComponent} from '../home.component';
 
 export const NavbarRoutes: RouterConfig = [
-    { path: 'home', component: HomeComponent },
+    { path: 'login', component: HomeComponent },
     { path: 'users', component: UsersComponent },
     { path: 'posts', component: PostsComponent },
-    { path: '', redirectTo:'home', pathMatch:'full'},
+    { path: '', redirectTo:'login', pathMatch:'full'},
 ];

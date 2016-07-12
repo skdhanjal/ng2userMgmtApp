@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 import {NavBarComponent} from './navbar/navbar.component';
+import {AuthenticationService} from './common/authentication.service';
 
 @Component({
   selector: 'my-app',
@@ -10,7 +11,8 @@ import {NavBarComponent} from './navbar/navbar.component';
         <router-outlet></router-outlet>
       </div>
   `,
-  directives: [NavBarComponent, ROUTER_DIRECTIVES]
+  directives: [NavBarComponent, ROUTER_DIRECTIVES],
+  providers: [AuthenticationService]
 })
 
 export class AppComponent { }

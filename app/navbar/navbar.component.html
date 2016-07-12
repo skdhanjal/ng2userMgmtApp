@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" [routerLink]="['/home']">ngProject</a>
+      <a class="navbar-brand" [routerLink]="['/login']">ngProject</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -11,8 +11,7 @@
         <li [class.active]="isCurrentRoute('/users')"><a [routerLink]="['/users']">Users</a></li>
         <li [class.active]="isCurrentRoute('/posts')"><a [routerLink]="['/posts']">Posts</a></li>
       </ul>
-      <login-form *ngIf="!isLoggedIn" class="navbar-form navbar-right"></login-form>
-      <logout *ngIf="isLoggedIn"></logout>
+      <logout *ngIf="isUserAuthenticated()"></logout>
     </div>
     <!-- /.navbar-collapse -->
   </div>
