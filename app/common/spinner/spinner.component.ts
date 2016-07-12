@@ -4,7 +4,7 @@ import {Component, Input} from '@angular/core';
     selector: 'spinner',
     template: `
         <div *ngIf="isVisible" class="spinner">
-            <i class="fa fa-spinner fa-spin fa-3x"></i>
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
         </div>
     `,
     styles: [`
@@ -15,14 +15,17 @@ import {Component, Input} from '@angular/core';
             bottom: 0;
             left: 0;
             right: 0;
-            background: #777272;
+            background: #5bc0de;;
             height: 50px;
-            width: 52px;
+            width: 50px;
             z-index: 119;
-            padding: 5px;
             display: flex;
             border-radius: 4px;
         }
+        .spinner i {
+            position: relative;
+            margin: auto;
+        } 
     `]
 })
 
